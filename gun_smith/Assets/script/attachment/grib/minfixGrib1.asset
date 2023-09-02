@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69616a1c4d0320845a78dff02e2dda08, type: 3}
+  m_Name: minfixGrib1
+  m_EditorClassIdentifier: 
+  img: {fileID: 21300000, guid: 1d969ba2b59fe3f46a60cf12608ef2d3, type: 3}
+  defaultSpread: 0
+  moveSpread: 0
+  zoomSpread: 0
+  fireSpread: 0
+  ads: 0
