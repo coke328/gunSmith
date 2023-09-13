@@ -28,14 +28,6 @@ public class gun : MonoBehaviour
     public float zoomScreenSize;
     public float ads;
     public int firemode;
-    private SpriteRenderer bodySprd;
-    private SpriteRenderer barrelSprd;
-    private SpriteRenderer handGuardSprd;
-    private SpriteRenderer dotSprd;
-    private SpriteRenderer gribSprd;
-    private SpriteRenderer magSprd;
-    private SpriteRenderer muzzleSprd;
-    private SpriteRenderer reverseSprd;
     public bool equiped;
     private Animation anim;
     private Transform t;
@@ -58,14 +50,6 @@ public class gun : MonoBehaviour
 
     void Start()
     {
-        bodySprd = GetComponent<SpriteRenderer>();
-        barrelSprd = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        handGuardSprd = transform.GetChild(1).GetComponent<SpriteRenderer>();
-        dotSprd = transform.GetChild(2).GetComponent<SpriteRenderer>();
-        gribSprd = transform.GetChild(3).GetComponent<SpriteRenderer>();;
-        magSprd = transform.GetChild(4).GetComponent<SpriteRenderer>();
-        muzzleSprd = transform.GetChild(5).GetComponent<SpriteRenderer>();
-        reverseSprd = transform.GetChild(6).GetComponent<SpriteRenderer>();
         anim = GetComponent<Animation>();
         if(mag && bulletScript){
             bulletScript = mag.bullet.GetComponent<bulletMovement>();
@@ -108,7 +92,7 @@ public class gun : MonoBehaviour
         }
 
         if(body){
-            bodySprd.sprite = body.img;
+            Instantiate(body.obj,transform);
             defaultSpread += body.defaultSpread;
             moveSpread += body.moveSpread;
             zoomSpread += body.zoomSpread;
@@ -125,8 +109,8 @@ public class gun : MonoBehaviour
             gunType = body.gunType;
         }
         if(barrel){
-            barrelSprd.sprite = barrel.img;
-            transform.GetChild(0).localPosition = new Vector3(body.barrelOffsetPos.x,body.barrelOffsetPos.y,0);
+            Instantiate(barrel.obj,transform);
+            transform.GetChild(1).localPosition = new Vector3(body.barrelOffsetPos.x,body.barrelOffsetPos.y,0);
             defaultSpread += barrel.defaultSpread;
             moveSpread += barrel.moveSpread;
             zoomSpread += barrel.zoomSpread;
@@ -137,8 +121,8 @@ public class gun : MonoBehaviour
 
         }
         if(handGuard){
-            handGuardSprd.sprite = handGuard.img;
-            transform.GetChild(1).localPosition = new Vector3(body.HandGuardOffsetPos.x,body.HandGuardOffsetPos.y,0);
+            Instantiate(handGuard.obj,transform);
+            transform.GetChild(2).localPosition = new Vector3(body.HandGuardOffsetPos.x,body.HandGuardOffsetPos.y,0);
             defaultSpread += handGuard.defaultSpread;
             moveSpread += handGuard.moveSpread;
             zoomSpread += handGuard.zoomSpread;
@@ -146,18 +130,16 @@ public class gun : MonoBehaviour
             ads += handGuard.ads;
         }
         if(dot){
-            dotSprd.sprite = dot.img;
-            transform.GetChild(2).localPosition = new Vector3(body.dotOffsetPos.x,body.dotOffsetPos.y,0);
+            Instantiate(dot.obj,transform);
+            transform.GetChild(3).localPosition = new Vector3(body.dotOffsetPos.x,body.dotOffsetPos.y,0);
             zoomSpread += dot.zoomSpread;
             zoomRange += dot.zoomRange;
             zoomScreenSize += dot.zoomScreenSize;
             ads += dot.ads;
         }
-        if(grib){
-            gribSprd.sprite = grib.img;
-            if(handGuard){
-                transform.GetChild(3).localPosition = new Vector3(body.HandGuardOffsetPos.x + handGuard.gribOffsetPos.x,body.HandGuardOffsetPos.y + handGuard.gribOffsetPos.y,0);
-            }
+        if(grib && handGuard){
+            Instantiate(grib.obj,transform);
+            transform.GetChild(4).localPosition = new Vector3(body.HandGuardOffsetPos.x + handGuard.gribOffsetPos.x,body.HandGuardOffsetPos.y + handGuard.gribOffsetPos.y,0);
             defaultSpread += grib.defaultSpread;
             moveSpread += grib.moveSpread;
             zoomSpread += grib.zoomSpread;
@@ -165,19 +147,17 @@ public class gun : MonoBehaviour
             ads += grib.ads;
         }
         if(mag){
-            magSprd.sprite = mag.img;
-            transform.GetChild(4).localPosition = new Vector3(body.magOffsetPos.x,body.magOffsetPos.y,0);
+            Instantiate(mag.obj,transform);
+            transform.GetChild(5).localPosition = new Vector3(body.magOffsetPos.x,body.magOffsetPos.y,0);
             ads += mag.ads;
             bulletCnt = mag.magSize;
             magSize = mag.magSize;
             reloadTime = mag.reloadTime;
 
         }
-        if(muzzle){
-            muzzleSprd.sprite = muzzle.img;
-            if(muzzle){
-                transform.GetChild(5).localPosition = new Vector3(body.barrelOffsetPos.x + barrel.muzzleOffsetPos.x,body.barrelOffsetPos.y + barrel.muzzleOffsetPos.y,0);
-            }
+        if(muzzle && barrel){
+            Instantiate(muzzle.obj,transform);
+            transform.GetChild(6).localPosition = new Vector3(body.barrelOffsetPos.x + barrel.muzzleOffsetPos.x,body.barrelOffsetPos.y + barrel.muzzleOffsetPos.y,0);
             defaultSpread += muzzle.defaultSpread;
             moveSpread += muzzle.moveSpread;
             zoomSpread += muzzle.zoomSpread;
@@ -186,8 +166,8 @@ public class gun : MonoBehaviour
             ads += muzzle.ads;
         }
         if(reverse){
-            reverseSprd.sprite = reverse.img;
-            transform.GetChild(6).localPosition = new Vector3(body.reverseOffsetPos.x,body.reverseOffsetPos.y,0);
+            Instantiate(reverse.obj,transform);
+            transform.GetChild(7).localPosition = new Vector3(body.reverseOffsetPos.x,body.reverseOffsetPos.y,0);
             defaultSpread += reverse.defaultSpread;
             moveSpread += reverse.moveSpread;
             zoomSpread += reverse.zoomSpread;

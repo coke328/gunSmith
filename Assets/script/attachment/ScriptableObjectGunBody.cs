@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjectGunBody", menuName = "ScriptableObject/ScriptableObjectGunBody")]
 public class ScriptableObjectGunBody : ScriptableObject
 {
-    public Sprite img;
+    public GameObject obj;
     public AnimationClip animClip;
     public Vector2 barrelOffsetPos;
     public Vector2 HandGuardOffsetPos;

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjectDot", menuName = "ScriptableObject/ScriptableObjectDot")]
 public class ScriptableObjectDot : ScriptableObject
 {
-    public Sprite img;
+    public GameObject obj;
     public float zoomSpread;
     public float zoomRange;
     public float zoomScreenSize;

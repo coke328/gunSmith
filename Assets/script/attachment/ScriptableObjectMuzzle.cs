@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjectMuzzle", menuName = "ScriptableObject/ScriptableObjectMuzzle")]
 public class ScriptableObjectMuzzle : ScriptableObject
 {
-    public Sprite img;
+    public GameObject obj;
     public float defaultSpread;
     public float moveSpread;
     public float zoomSpread;

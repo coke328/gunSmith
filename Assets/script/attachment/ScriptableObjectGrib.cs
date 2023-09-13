@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjectGrib", menuName = "ScriptableObject/ScriptableObjectGrib")]
 public class ScriptableObjectGrib : ScriptableObject
 {
-    public Sprite img;
+    public GameObject obj;
     public float defaultSpread;
     public float moveSpread;
     public float zoomSpread;

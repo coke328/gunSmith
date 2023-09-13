@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjectReverse", menuName = "ScriptableObject/ScriptableObjectReverse")]
 public class ScriptableObjectReverse : ScriptableObject
 {
-    public Sprite img;
+    public GameObject obj;
     public float defaultSpread;
     public float moveSpread;
     public float zoomSpread;

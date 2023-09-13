@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjectMag", menuName = "ScriptableObject/ScriptableObjectMag")]
 public class ScriptableObjectMag : ScriptableObject
 {
-    public Sprite img;
+    public GameObject obj;
     public GameObject bullet;
     public float ads;
     public int magSize;

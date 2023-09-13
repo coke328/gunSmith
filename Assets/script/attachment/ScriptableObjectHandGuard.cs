@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjectHandGuard", menuName = "ScriptableObject/ScriptableObjectHandGuard")]
 public class ScriptableObjectHandGuard : ScriptableObject
 {
-    public Sprite img;
+    public GameObject obj;
     public Vector2 gribOffsetPos;
     public float defaultSpread;
     public float moveSpread;

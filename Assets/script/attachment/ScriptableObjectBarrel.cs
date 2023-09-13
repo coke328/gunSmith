@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjectBarrel", menuName = "ScriptableObject/ScriptableObjectBarrel")]
 public class ScriptableObjectBarrel : ScriptableObject
 {
-    public Sprite img;
+    public GameObject obj;
     public Vector2 muzzleOffsetPos;
     public int barrelLength;
     public float defaultSpread;
